@@ -1,0 +1,41 @@
+customer
+ 	고객ID customer_id
+ 	이름 user_name
+ 	email
+ 	phone
+
+address
+	주소ID address_id
+	고객ID customer_id
+ 	도시 city
+ 	구/군 district
+	detail
+
+category
+	카테고리ID category_id
+	카테고리명 category_name
+
+product
+	상품ID product_id
+	상품명 product_name
+ 	price
+ 	재고 stock
+	category_id
+
+orders
+	주문ID order_id
+ 	고객ID customer_id
+	주문일 order_date
+	주문상태 status
+
+order_item
+	주문상세ID item_id
+ 	주문ID order_id
+ 	상품ID product_id
+	수량 quantity
+
+shipment
+	배송ID shipment_id
+	주문ID order_id
+	tracking_number
+	shipped_date

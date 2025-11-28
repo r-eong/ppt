@@ -1,0 +1,10 @@
+-- 01. 동서울 -> 동동서울로 수정하여 출력
+update arrival
+set a_terminal=concat('동',a_terminal)
+where a_terminal='동서울';
+
+-- 02. 좌석이 프리미엄인 고객의 전화번호 가운데 4자리만 ****로 수정하여 출력
+select b.b_id, b.b_seat, replace(b_phone,substr(b_phone,5,4),'****'), b.b_birth, r.r_date,bc.bc_class from booking b
+inner join routeinfo r on r.r_id = b.r_id
+inner join busclass bc on bc.bc_id = r.bc_id 
+where bc.bc_class='프리미엄';
